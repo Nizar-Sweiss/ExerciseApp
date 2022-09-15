@@ -13,8 +13,14 @@ class _WorkOutState extends State<WorkOut> {
     return 
     Scaffold(
       appBar: AppBar(),
-      body: Container(
-        child: Text("Hi "),
+      body: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Container(
+          height: 200,
+          width: 200,
+          color: Colors.amber,
+          child: Text("Hi "),
+        ),
       ),
     );
   }

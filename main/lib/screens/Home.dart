@@ -8,11 +8,9 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text("EXERCISES"),
-        ),
+        backgroundColor: Color.fromARGB(255, 24, 26, 54),
         body: HomeScreen(),
       ),
     );
@@ -28,19 +26,102 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+  @override
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        Category(
-          textBackColor: Colors.black,
-          TextColor: Color.fromARGB(255, 254, 254, 254),
-          CategoryImage: "assests/images/WorkOut.jpg",
-          text: "TEST 1 ",
-          onTapping: (() {
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return WorkOut();
-            }));
-          }),
+        
+        Container(
+          decoration: BoxDecoration(
+            
+            image: DecorationImage(
+                image: AssetImage("assests/images/wallpaper.jpg"),
+                fit: BoxFit.cover),
+            
+          ),
+          child: Column(
+            children: [
+              Container(
+          height: 230,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(bottomRight: Radius.circular(70)),
+              color: Color.fromARGB(255, 56, 2, 115)),
+          child: Stack(
+            children: [
+              Positioned(
+                top: 80,
+                left: 0,
+                child: Container(
+                  height: 100,
+                  width: 300,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          bottomRight: Radius.circular(70),
+                          topRight: Radius.circular(70)),
+                      color: Color.fromARGB(255, 255, 255, 255)),
+                ),
+              ),
+              Positioned(
+                top: 95,
+                left: 20,
+                child: Text(
+                  'Exercises',
+                  style: TextStyle(
+                      fontSize: 50,
+                      color: Color.fromARGB(255, 48, 0, 97),
+                      fontWeight: FontWeight.w800,
+                      fontFamily: "ZenTokyoZoo"),
+                ),
+              )
+            ],
+          ),
+        ),
+              Category(
+                textBackColor: Color.fromARGB(255, 2, 103, 192),
+                TextColor: Color.fromARGB(255, 255, 255, 255),
+                CategoryImage: "assests/images/Weight.jpg",
+                text: "Work-Out",
+                onTapping: (() {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return WorkOut();
+                  }));
+                }),
+              ),
+              Category(
+                textBackColor: Color.fromARGB(255, 2, 103, 192),
+                TextColor: Color.fromARGB(255, 255, 255, 255),
+                CategoryImage: "assests/images/OutDoor.jpg",
+                text: "Out-Door",
+                onTapping: (() {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return WorkOut();
+                  }));
+                }),
+              ),
+              Category(
+                textBackColor: Color.fromARGB(255, 2, 103, 192),
+                TextColor: Color.fromARGB(255, 254, 254, 254),
+                CategoryImage: "assests/images/WorkOut.jpg",
+                text: "Weight-Liftting",
+                onTapping: (() {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return WorkOut();
+                  }));
+                }),
+              ),
+              Category(
+                textBackColor: Color.fromARGB(255, 2, 103, 192),
+                TextColor: Color.fromARGB(255, 254, 254, 254),
+                CategoryImage: "assests/images/Cadrio.jpg",
+                text: "Cardio",
+                onTapping: (() {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return WorkOut();
+                  }));
+                }),
+              )
+            ],
+          ),
         )
       ],
     );
