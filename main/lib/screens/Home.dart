@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:main/Components/categorywidget.dart';
 import 'package:main/screens/workout.dart';
+import"package:hovering/hovering.dart";
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -29,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      
       children: [
         
         Container(

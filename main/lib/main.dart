@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:main/screens/Home.dart';
+import 'package:main/screens/splashscreen.dart';
+import 'package:main/screens/workout.dart';
 
 void main() {
-  runApp(Main());
+  runApp(MaterialApp(home: WorkOut(),) );
 }
 
 class Main extends StatelessWidget {
