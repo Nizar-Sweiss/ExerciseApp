@@ -88,6 +88,10 @@ flutter:
     - family: ZenTokyoZoo
       fonts:
         - asset: assests/fonts/ZenTokyoZoo-Regular.ttf
+    - family: DancingScript
+      fonts:
+        - asset: assests\fonts\DancingScript-VariableFont_wght.ttf
+        
         
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic

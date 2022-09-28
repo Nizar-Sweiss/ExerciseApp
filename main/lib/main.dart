@@ -4,7 +4,7 @@ import 'package:main/screens/splashscreen.dart';
 import 'package:main/screens/workout.dart';
 
 void main() {
-  runApp(MaterialApp(home: WorkOut(),) );
+  runApp(MaterialApp(home: Main(),) );
 }
 
 class Main extends StatelessWidget {
@@ -12,6 +12,6 @@ class Main extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Home();
+    return SplashScreen();
   }
 }
