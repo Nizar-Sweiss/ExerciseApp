@@ -2,14 +2,14 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:main/Objects/User.dart';
+import 'package:main/screens/AlertDialog.dart';
 import 'package:main/screens/Home.dart';
 import 'package:cool_alert/cool_alert.dart';
 import 'package:alert/alert.dart';
+import 'package:main/screens/signin.dart';
+
 var emailContr = TextEditingController();
 var passwordContr = TextEditingController();
-User user1 = User("Test1", "1234");
-
-
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -19,6 +19,12 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  
+  User user1 = User("test1", "123");
+  User user2 = User("test2", "123");
+  User user3 = User("test3", "123");
+  User user4 = User("test4", "123");
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -63,7 +69,7 @@ class _LoginState extends State<Login> {
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 100,
-                                fontFamily: 'DancingScript'),
+                                fontFamily: 'ZenTokyoZoo'),
                           )),
                     ),
                     //SizedBox(height: 150,),
@@ -141,7 +147,14 @@ class _LoginState extends State<Login> {
                                 MaterialPageRoute(
                                     builder: (context) => Home()));
                           } else {
-                            Alert(message: 'Test', shortDuration: true).show();
+                            emailContr.clear();
+                            passwordContr.clear();
+                            showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return AlertDia();
+                                });
+                            
                           }
                         },
                         child: Text(
@@ -167,7 +180,10 @@ class _LoginState extends State<Login> {
                               fontWeight: FontWeight.bold),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {  Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignIn()));},
                           child: Text(
                             "SIGN IN !",
                             style: TextStyle(
@@ -190,13 +206,23 @@ class _LoginState extends State<Login> {
   }
 
   ValidateInfo() {
-   
-    if (emailContr.text == "Nizar" && passwordContr.text == "1234") {
-      print(emailContr.toString());
-      return true;
-    } else {
-      print(passwordContr.toString());
-      return false;
+    // if (emailContr.text == "Nizar" && passwordContr.text == "1234") {
+    //   print(emailContr.toString());
+    //   return true;
+    // } else {
+    //   print(passwordContr.toString());
+    //   return false;
+    // }
+
+    for (int i = 0; i <= User.Users.length; i++) {
+      if (emailContr.text == User.Users[i].getName() &&
+          passwordContr.text == User.Users[i].getPasswprd()) {
+        //print(emailContr.toString());
+        return true;
+      } else {
+        //print(passwordContr.toString());
+        return false;
+      }
     }
   }
 

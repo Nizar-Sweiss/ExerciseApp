@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:main/Components/categorywidget.dart';
-import 'package:main/screens/workout.dart';
+import 'package:main/screens/Categorys/workout.dart';
 import "package:hovering/hovering.dart";
 
 class Home extends StatelessWidget {
