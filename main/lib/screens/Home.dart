@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:main/Components/categorywidget.dart';
 import 'package:main/screens/Categorys/workout.dart';
 import "package:hovering/hovering.dart";
+import 'package:animated_icon_button/animated_icon_button.dart';
+import 'package:lottie/lottie.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -61,6 +63,19 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Color.fromARGB(255, 255, 255, 255)),
                       ),
                     ),
+                    Positioned(
+                        top: 5,
+                        left: 290,
+                        child: MaterialButton(
+                          onPressed: () {},
+                          child: Container(
+                              width: 100,
+                              height: 100,
+                              child: Lottie.asset('assests/Lottie/Q&A.json')),
+                        )
+                        //
+                        ),
+                    
                     Positioned(
                       top: 95,
                       left: 20,

@@ -18,6 +18,7 @@ class _Cust_TextFieldState extends State<Cust_TextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      
       //To take the input when it login
       maxLength: widget.maxLength,
       style: TextStyle(color: Colors.white),
