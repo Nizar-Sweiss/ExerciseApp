@@ -4,6 +4,7 @@ import 'package:main/screens/Categorys/workout.dart';
 import "package:hovering/hovering.dart";
 import 'package:animated_icon_button/animated_icon_button.dart';
 import 'package:lottie/lottie.dart';
+import 'package:main/screens/drawer.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -11,8 +12,11 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(backgroundColor:  Color.fromARGB(255, 56, 2, 115), ),
+        drawer: Drawer(backgroundColor: Color.fromARGB(110, 157, 0, 255) ,child: HomeDrawer(),),
         backgroundColor: Color.fromARGB(255, 24, 26, 54),
         body: HomeScreen(),
       ),
@@ -43,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Column(
             children: [
               Container(
-                height: 230,
+                height: 170,
                 decoration: BoxDecoration(
                     borderRadius:
                         BorderRadius.only(bottomRight: Radius.circular(70)),
@@ -51,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Stack(
                   children: [
                     Positioned(
-                      top: 80,
+                      top: 30,
                       left: 0,
                       child: Container(
                         height: 100,
@@ -63,21 +67,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Color.fromARGB(255, 255, 255, 255)),
                       ),
                     ),
-                    Positioned(
-                        top: 5,
-                        left: 290,
-                        child: MaterialButton(
-                          onPressed: () {},
-                          child: Container(
-                              width: 100,
-                              height: 100,
-                              child: Lottie.asset('assests/Lottie/Q&A.json')),
-                        )
-                        //
-                        ),
+                   
                     
                     Positioned(
-                      top: 95,
+                      top: 50,
                       left: 20,
                       child: Text(
                         'Exercises',
